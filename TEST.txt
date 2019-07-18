@@ -1,0 +1,3 @@
+Name: TEST
+Password: test
+Class: Rogue
