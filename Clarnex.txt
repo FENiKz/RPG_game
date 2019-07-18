@@ -1,0 +1,3 @@
+Name: Clarnex
+Password: indeed
+Class: Rogue
