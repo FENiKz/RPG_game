@@ -40,7 +40,7 @@ def registration():
 
         if (Player_Character_Creation_Confirmation == 1):
             Profile_data = open(Player_Name + ".txt", "w")
-            Profile_data.write("Name: " + Player_Name + "\nPassword: " + Player_Password + "\nClass: " + Player_Class)
+            Profile_data.write("Username: " + Player_Name + "\nPassword: " + Player_Password + "\nClass: " + Player_Class)
             Profile_data.close()
         else:
             print("Returning to Login Screen...")

@@ -3,7 +3,7 @@ import os
 Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
 
 def login():
-    username = input(Field_Separator + "Name: ")
+    username = input(Field_Separator + "Username: ")
     Profile_data = {}
     if os.path.exists('./' + username + '.txt'):
         with open(username + ".txt") as f:
@@ -15,10 +15,12 @@ def login():
                 password = input("Password: ")
                 print(Field_Separator)
                 if password == Profile_data["Password:"]:
-                    break
+                    return Profile_data
                 else:
                     Login_Attempts -= 1
-                    print("Wrong Password\n You have %d choices left" % Login_Attempts)
+                    print("Wrong Password\nYou have %d Chances left" % Login_Attempts)
+        return 1
     else:
-        print("This Username does not exist")
-    return Profile_data
+        print("Username does not exist")
+        return 1
+
