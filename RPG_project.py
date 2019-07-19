@@ -3,6 +3,7 @@
 import Registration
 import Login
 import time
+import Class_Choice
 
 #This Segment Focuses on Character Creation / The first thing to pop up after booting up the game.
 
@@ -26,14 +27,28 @@ while True:
         else:
             break
 
-Player_Name = Profile_data["Name:"]
-
-print("Welcome " + Player_Name + " To <Insert Title Here>" + Field_Separator + "[1] New Game\n[2] Contiunue\n[3] Options\n[4] Exit" + Field_Separator + "Choice: ")
+Username = Profile_data["Username:"]
 
 while True:
-    Main_Menu_Choice = input()
+    print("Welcome " + Username + " To <Insert Title Here>" + Field_Separator + "[1] New Game\n[2] Contiunue\n[3] Options\n[4] Exit" + Field_Separator)
+    Main_Menu_Choice = input("Choice: ")
     if Main_Menu_Choice == "1":
-        print("Under Construction")
+        with open(Username + "_save" ".txt") as f:
+            Profile_data_save = {}
+            for line in f:
+                (key, val) = line.split()
+                Profile_data_save[(key)] = val
+
+        if "Class:" in Profile_data_save:
+            print("This will override your current save game file. Are you sure you want to continue?\n[1] Yes  [2] No")
+            Player_choice = input("Choice: ")
+            if Player_choice == "1":
+                Class_Choice.Class_choice(Username)
+            else:
+                continue
+        else:
+            Class_Choice.Class_choice(Username)
+        break
 
     elif Main_Menu_Choice == "2":
         print("Under Construction")

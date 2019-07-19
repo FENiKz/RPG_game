@@ -1,12 +1,14 @@
+#This module check if an account with the provided username exsists and check for password if it exists
+
 import os
 
 Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
 
 def login():
-    username = input(Field_Separator + "Username: ")
+    Username = input(Field_Separator + "Username: ")
     Profile_data = {}
-    if os.path.exists('./' + username + '.txt'):
-        with open(username + ".txt") as f:
+    if os.path.exists('./' + Username + '.txt'):
+        with open(Username + ".txt") as f:
             for line in f:
                 (key, val) = line.split()
                 Profile_data[(key)] = val
@@ -23,4 +25,3 @@ def login():
     else:
         print("Username does not exist")
         return 1
-
