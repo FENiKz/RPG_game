@@ -24,5 +24,3 @@ def Class_choice(Username):
             return Classes[Player_Class_Choice]
         else:
             print("Only numbers from 1 to %d" % len(Classes[1:]))
-
-

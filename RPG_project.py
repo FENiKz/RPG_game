@@ -1,5 +1,6 @@
 #RPG Game 1.0
 
+import os
 import Registration
 import Login
 import time
@@ -33,16 +34,10 @@ while True:
     print("Welcome " + Username + " To <Insert Title Here>" + Field_Separator + "[1] New Game\n[2] Contiunue\n[3] Options\n[4] Exit" + Field_Separator)
     Main_Menu_Choice = input("Choice: ")
     if Main_Menu_Choice == "1":
-        with open(Username + "_save" ".txt") as f:
-            Profile_data_save = {}
-            for line in f:
-                (key, val) = line.split()
-                Profile_data_save[(key)] = val
-
-        if "Class:" in Profile_data_save:
-            print("This will override your current save game file. Are you sure you want to continue?\n[1] Yes  [2] No")
-            Player_choice = input("Choice: ")
-            if Player_choice == "1":
+        if os.path.exists('./' + Username + "_save" + ".txt"):
+            print("This will override your current save game. Are you sure you want to continue?\n[1] Yes   [2] No")
+            Choice = input("Choice: ")
+            if Choice == "1":
                 Class_Choice.Class_choice(Username)
             else:
                 continue
