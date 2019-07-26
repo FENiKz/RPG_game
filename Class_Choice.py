@@ -1,13 +1,16 @@
-#Module where the Player chooses a class from the Classes list and the class choice gets appended to his Username.txt file
+# Module where the Player chooses a class from the Classes lis
+# and the class choice gets appended to his Username.txt file.
 
+# Beautification variable.
 Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
+
 
 def Class_choice(Username):
     while True:
         Classes = ['Warrior', 'Rogue', 'Mage', 'Bard', 'Paladin', 'Deprived']
         print(Field_Separator)
         for i in range(0, len(Classes)):
-            print("[%d]" % (i + 1), Classes[i], end='\t')
+            print("[%d]" % (i + 1), Classes[i], end='    ')
         print("\n" + Field_Separator)
         while True:
             try:

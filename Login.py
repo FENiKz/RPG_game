@@ -1,9 +1,10 @@
-#This module checks if an account with the provided username exsists and checks if the provided password is correct
+# This module checks if an account with the provided username exsists and checks if the provided password is correct
 
 import os
 
-#Beautification variable
+# Beautification variable
 Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
+
 
 def login():
     Username = input(Field_Separator + "Username: ")

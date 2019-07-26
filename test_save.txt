@@ -1,1 +1,1 @@
-Class: Mage
+Class: Rogue

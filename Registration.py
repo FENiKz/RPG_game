@@ -2,7 +2,9 @@
 
 import os
 
+# Beautification variable
 Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
+
 
 def registration():
     Username = input("Username: ")
@@ -17,9 +19,9 @@ def registration():
             else:
                 print("The Passwords do not match")
 
-        #Creating and saving username + password to the file Username.txt
-        Profile_data = open(Username + ".txt", "w")
-        Profile_data.write("Username: " + Username + "\nPassword: " + Player_Password)
-        Profile_data.close()
+# Creating and saving username + password to the file Username.txt
+        profile_data = open(Username + ".txt", "w")
+        profile_data.write("Username: " + Username + "\nPassword: " + Player_Password)
+        profile_data.close()
 
         print("Registration successful!")
