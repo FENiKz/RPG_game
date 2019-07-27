@@ -83,6 +83,8 @@ while True:
             pass
         elif menu_game_choice == "3":
             pass
+
+# Exiting the game back to Main Menu after confirmation.
         elif menu_game_choice == "4":
             Exit_confirmation = input(Variables.exit_confirmation_txt)
             if Exit_confirmation == "1":
@@ -93,3 +95,6 @@ while True:
         else:
             continue
 
+
+# TO DO:
+# Implement the first level of the mysterious tower and use the word_minigame, generate gold as reward.
