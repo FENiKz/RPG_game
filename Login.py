@@ -1,4 +1,4 @@
-# This module checks if an account with the provided username exsists and checks if the provided password is correct
+# This module checks if an account with the provided username exists and checks if the provided password is correct
 
 import os
 
