@@ -3,7 +3,8 @@ Minigame where you are presented with a list of random words. Your goal is to ty
 and then you will be presented with a new list. You are limited by time and your damage is based on the amount of
 words you managed to type before the time ran out and the number of characters a word has. The more characters a
 word has the more damage you will deal with that word. Be careful not to spend too much time typing long words.
-Sometimes it is better to just type easier/shorter words.
+Sometimes it is better to just type easier/shorter words. After the game ends it returns the string Success if
+you managed to defeat the monster, or Fail if your HP dropped under 1.
 """
 
 import random
@@ -35,8 +36,8 @@ def word_minigame(t_duration, dmg_boost, p_hp, m_level):
 
                 m_hp -= dmg_done
                 if m_hp > 0:
-                    print("\n%d Damage dealt! \
-                           Monster is left with %d HP / %d seconds left!" % (dmg_done, m_hp, t_remaining))
+                    print("\n%d Damage dealt!"
+                          "Monster is left with %d HP / %d seconds left!" % (dmg_done, m_hp, t_remaining))
                 else:
                     print("\n%d Damage dealt! Congratulations! you have slain the monster!" % dmg_done)
                     return "Success"
@@ -50,7 +51,7 @@ def word_minigame(t_duration, dmg_boost, p_hp, m_level):
         else:
             print("\nTimes up. Your last attack didn't count since you submitted after the time limit.")
             p_hp -= m_dmg
-            if p_hp > 0:
+            if p_hp > 1:
                 time.sleep(2)
                 print("\nMonster dealt %d DMG to you!" % m_dmg)
                 time.sleep(2)
@@ -59,6 +60,6 @@ def word_minigame(t_duration, dmg_boost, p_hp, m_level):
                 t_end = time.time() + t_duration
                 continue
             else:
-                print("\nMonster dealt %d DMG to you. You are gravely wounded and barely escaped from \
-                                       the monster and retreated back to your camp." % m_dmg)
+                print("\nMonster dealt %d DMG to you. You are gravely wounded and barely escaped from"
+                      "the monster and retreated back to your camp." % m_dmg)
                 return "Fail"

@@ -20,7 +20,6 @@ def login():
             Login_Attempts = 3
             while Login_Attempts > 0:
                 password = input("Password: ")
-                print(Field_Separator)
                 if password == Profile_data["Password:"]:
                     return Profile_data
                 else:
