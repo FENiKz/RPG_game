@@ -5,6 +5,9 @@ import Registration
 import Login
 import Class_Choice
 import Variables
+import random
+import Word_Minigame
+
 
 # This Segment Focuses on Account registration / The first thing to pop up after booting up the game.
 while True:
@@ -26,6 +29,14 @@ while True:
 Username = Profile_data["Username:"]
 
 
+# Check if the user has a save game file.
+save_game = ""
+if os.path.exists('./' + Username + "_save" + ".txt"):
+    save_game = True
+else:
+    save_game = False
+
+
 # Main game loop that shows the game menu.
 while True:
     Main_Menu_Choice = input(Variables.menu_main_txt)
@@ -33,7 +44,7 @@ while True:
 
 # If the user chose New Game we first check if he has a save game file and ask for overwrite confirmation.
     if Main_Menu_Choice == "1":
-        if os.path.exists('./' + Username + "_save" + ".txt"):
+        if save_game:
             Choice = input(Variables.save_override_txt)
             if Choice == "1":
                 chosen_class = Class_Choice.Class_choice(Username)
@@ -48,14 +59,15 @@ while True:
 
 # If the player chose Continue we check for a save file and print a message if the save file is missing.
     elif Main_Menu_Choice == "2":
-        if os.path.exists('./' + Username + "_save" + ".txt"):
+        if save_game:
             print("\nLoading the game. Please Wait.")
+
         else:
             print("No save game file found. Please start a new adventure by choosing \"New Game\"")
             continue
 
 
-# If the player chose options we display the options menu.
+# If the player chose Options we display the Options menu.
     elif Main_Menu_Choice == "3":
         print(Variables.options_txt)
 
@@ -78,9 +90,18 @@ while True:
 
 # When player chooses to enter the Mysterious tower select a random minigame from the list of minigames
         if menu_game_choice == "1":
-            pass
+            game_list = [Word_Minigame.word_minigame, ]
+            random_chosen_game = game_list[(random.randint(0, len(game_list[1:])))]
+            game_result = random_chosen_game(30, 0, 100, 1)
+            if game_result == "Success":
+                print("Congratulations on defeating the Tower floor! You received %d gold!" % (100))
+
+
+# Character
         elif menu_game_choice == "2":
             pass
+
+# Inventory
         elif menu_game_choice == "3":
             pass
 

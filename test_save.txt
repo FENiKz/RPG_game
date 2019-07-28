@@ -1,1 +1,1 @@
-Class: Rogue
+Class: Warrior
