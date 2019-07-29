@@ -21,3 +21,8 @@ options_txt = Field_Separator + "OPTIONS\n\n[1] Resolution:\n[2] Text Size:\n[3]
 
 exit_confirmation_txt = ("Are you sure you want to quit?"
                          "\n\n[1] Yes     [2] No" + Field_Separator + "Choice: ")
+
+difficulty_txt = ("Choose difficulty:\n\n"
+                  "[1] Easy        [2] Normal       [3] Hard        [4] Very Hard  [5] Chaos    \n"
+                  "[6] Chaos II    [7] Chaos III    [8] Chaos IV    [10] Chaos V   [11] Chaos VI\n\n"
+                  "Choice: ")

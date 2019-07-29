@@ -1,9 +1,7 @@
 # This module checks if an account with the provided username exists and checks if the provided password is correct
 
 import os
-
-# Beautification variable
-Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
+from Variables import Field_Separator
 
 
 def login():
@@ -15,7 +13,7 @@ def login():
         with open(Username + ".txt") as f:
             for line in f:
                 (key, val) = line.split()
-                Profile_data[(key)] = val
+                Profile_data[key] = val
 
             Login_Attempts = 3
             while Login_Attempts > 0:

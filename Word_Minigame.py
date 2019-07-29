@@ -40,7 +40,8 @@ def word_minigame(t_duration, dmg_boost, p_hp, m_level):
                           "Monster is left with %d HP / %d seconds left!" % (dmg_done, m_hp, t_remaining))
                 else:
                     print("\n%d Damage dealt! Congratulations! you have slain the monster!" % dmg_done)
-                    return "Success"
+                    result = "Success"
+                    break
 
             else:
                 if t_remaining > 0:
@@ -61,5 +62,8 @@ def word_minigame(t_duration, dmg_boost, p_hp, m_level):
                 continue
             else:
                 print("\nMonster dealt %d DMG to you. You are gravely wounded and barely escaped from"
-                      "the monster and retreated back to your camp." % m_dmg)
-                return "Fail"
+                      " the monster and retreated back to your camp." % m_dmg)
+                result = "Fail"
+                break
+
+    return result

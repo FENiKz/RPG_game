@@ -2,9 +2,6 @@
 
 import os
 
-# Beautification variable
-Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
-
 
 def registration():
     Username = input("Username: ")

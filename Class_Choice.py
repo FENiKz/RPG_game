@@ -1,8 +1,8 @@
-# Module where the Player chooses a class from the Classes lis
+# Module where the Player chooses a class from the Classes list
 # and the class choice gets appended to his Username.txt file.
 
 # Beautification variable.
-Field_Separator = "\n\n------------------------------------------------------------------------------------------\n\n"
+from Variables import Field_Separator
 
 
 def Class_choice(Username):
