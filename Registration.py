@@ -1,24 +1,24 @@
-# Module used for creating a file on the local filesystem with the provided Username and Password as content
+# Module used for creating a file on the local filesystem with the provided username and password as content
 
 import os
 
 
 def registration():
-    Username = input("Username: ")
-    if os.path.exists('./' + Username + '.txt'):
-        print("Username already Exists")
+    username = input("username: ")
+    if os.path.exists('./' + username + '.txt'):
+        print("username already Exists")
     else:
         while True:
-            Player_Password = input("Password: ")
-            Player_Pwd_Confirmation = input("Re-enter Password: ")
-            if Player_Pwd_Confirmation == Player_Password:
+            player_password = input("Password: ")
+            player_pwd_confirmation = input("Re-enter password: ")
+            if player_pwd_confirmation == player_password:
                 break
             else:
-                print("The Passwords do not match")
+                print("The passwords do not match")
 
-# Creating and saving username + password to the file Username.txt
-        profile_data = open(Username + ".txt", "w")
-        profile_data.write("Username: " + Username + "\nPassword: " + Player_Password)
+# Creating and saving username + password to the file username.txt
+        profile_data = open(username + ".txt", "w")
+        profile_data.write("username: " + username + "\npassword: " + Player_password)
         profile_data.close()
 
         print("Registration successful!")

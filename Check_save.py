@@ -3,10 +3,10 @@
 import os
 
 
-def check_save(Username):
+def check_save(username):
     save_game_data = {}
-    if os.path.exists('./' + Username + "_save" + ".txt"):
-        with open(Username + "_save.txt") as f:
+    if os.path.exists('./' + username + "_save" + ".txt"):
+        with open(username + "_save.txt") as f:
             for line in f:
                 (key, val) = line.split()
                 save_game_data[key] = val

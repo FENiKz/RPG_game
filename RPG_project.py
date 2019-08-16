@@ -7,6 +7,7 @@ import Variables
 import random
 import Word_Minigame
 import Check_save
+import Add_Resources
 
 
 # This Segment Focuses on Account registration / The first thing to pop up after booting up the game.
@@ -102,9 +103,11 @@ while True:
                                              game_parameters[2], game_parameters[3])
 
             if game_result == "Success":
+                resource_reward = Add_Resources.give_resources(choose_difficulty, Username, save_game)
                 print("\nCongratulations on defeating the Tower floor! You received %d gold!\n"
-                      % (100 * (choose_difficulty ** 2)))
-
+                      % resource_reward)
+            else:
+                print("\nChoose a lower difficulty or try to get stronger before challenging that floor again.\n")
 
 # Character
         elif menu_game_choice == "2":

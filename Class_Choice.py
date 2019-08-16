@@ -20,9 +20,10 @@ def Class_choice(Username):
                 print("Only numbers are acceptable")
 
         if Player_Class_Choice in range(1, len(Classes)):
-            Profile_data = open(Username + "_save" + ".txt", "w")
-            Profile_data.write("Class: " + Classes[(Player_Class_Choice - 1)])
-            Profile_data.close()
+            profile_data = open(Username + "_save" + ".txt", "w")
+            profile_data.write("Class: " + Classes[(Player_Class_Choice - 1)] + 
+                               "\nGold: ", 0)
+            profile_data.close()
 
             return Classes[Player_Class_Choice]
         else:

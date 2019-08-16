@@ -1,19 +1,18 @@
 # # Module that provides resources to the player if he defeated the Mysterious tower floor
-#
-#
-# def give_resources():
-#     pass
 
-import Word_Minigame
-import Variables
-import random
+import Check_save
 
-game_list = [Word_Minigame.word_minigame, ]
 
-random_chosen_game = game_list[(random.randint(0, len(game_list[1:])))]
+def give_resources(difficulty, username, save_content):
+    # Calculate the reward based on difficulty
+    resource_reward = 100 * (difficulty ** 2)
 
-choose_difficulty = int(input(Variables.difficulty_txt))
+    # Load current gold from the save file, increase the value and save it to the save_game file
+    save_content["Gold:"]
 
-game_parameters = [30, 0, 100, choose_difficulty]
 
-Word_Minigame.word_minigame(game_parameters[0], game_parameters[1], game_parameters[2], game_parameters[3])
+    profile_data = open(username + "_save" + ".txt", "w")
+    profile_data.write("Gold: ")
+    profile_data.close()
+
+    return resource_reward
